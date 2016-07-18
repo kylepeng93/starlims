@@ -1,9 +1,9 @@
 /**
 *
-*
-*
-*
-*
+*created at 2016-07-18 15:32
+*author by kylepeng
+*you can use it for free
+*I will appreciate for your contribution
 */
 
 function getWhereClause(str1 : String , str2 : String , str3 : String)
