@@ -1,0 +1,16 @@
+/**
+*@author by kylepeng
+*@date 2016-07-18 16:53
+*this file is used to dynamical Modify Field value in datagrid
+*/
+/**
+*@param dgFoo:the datagrid you want to modify the column
+*@param dgCol:the column you want to modify
+*@param value:the value you want to midify to database
+*/
+ function updateFieldImediately(dgFoo : DataGrid , dgCol : DataGridColumn , value : String)
+ {
+    dgFoo.SetCurrentDataRow("dgCol","value");
+    dgFoo.update();
+    dgFoo.refreshEx();
+ }
