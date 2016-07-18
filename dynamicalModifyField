@@ -8,9 +8,9 @@
 *@param dgCol:the column you want to modify
 *@param value:the value you want to midify to database
 */
- function updateFieldImediately(dgFoo : DataGrid , dgCol : DataGridColumn , value : String)
+ function updateFieldImediately(dgFoo : DataGrid , strCol : String , value : String)
  {
-    dgFoo.SetCurrentDataRow("dgCol","value");
-    dgFoo.update();
-    dgFoo.refreshEx();
+    dgFoo.SetCurrentRowData(strCol,value);
+    dgFoo.Update();
+    dgFoo.RefreshEx();
  }
