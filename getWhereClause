@@ -1,0 +1,33 @@
+/**
+*
+*
+*
+*
+*
+*/
+
+function getWhereClause(str1 : String , str2 : String , str3 : String)
+{
+  var strWhereClause : String = "origrec > 0";
+  if(str1 != String.Empty())
+  {
+    strWhereClause += " field1 = str1";
+  }
+  if(str2 != String.Empty())
+  {
+    strWhereClause += " field2 = str2";
+  }
+  if(str3 != String.Empty())
+  {
+    //build string type to array type
+    var arr = lims.BuildArray(str3);
+    for(var i = 0 ; i < arr.Length ; i++)
+    {
+      var str4 : String = "";
+      str4 += " field3 like '"+arr[i]+ "'% or ";   //str4 will likes "field3 like 'value%' or "
+    }
+    str4 = str4.Substring(1,str4.Length-10);
+    strWhereClause += " and exists(select * from dual)" + str4 ;
+  }
+  return strWhereClause;
+}
